@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 
@@ -14,13 +14,10 @@ def multistep_form(request):
             customer.address = address
             customer.save()
             car_form.save()
-            
-            print("Form submitted successfully.")
-            # Redirect to a success page or do any other necessary processing
+            return redirect('success')
             
         else:
             print("Form validation failed.")
-            # Handle form validation errors
             
     else:
         address_form = AddressForm()
@@ -34,3 +31,7 @@ def multistep_form(request):
     }
         
     return render(request, 'multistep_form.html', context=context)
+
+
+def success_view(request):
+    return render(request, 'success.html')
