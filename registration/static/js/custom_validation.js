@@ -32,24 +32,24 @@ $(document).ready(function () {
       },
       messages: {
         // Define custom error messages for each field
-        'first_name': 'Please provide a valid first name.',
-        'last_name': 'Please provide a valid last name.',
-        'age': 'Please provide a valid age.',
-        'date_of_birth': 'Please provide a valid date of birth.',
-        'phone': 'Please provide a valid phone number.',
+        'first_name': 'Please provide a first name.',
+        'last_name': 'Please provide a last name.',
+        'age': 'Please provide a age.',
+        'date_of_birth': 'Please provide a date of birth.',
+        'phone': 'Please provide a phone number.',
         'email': {
           required: "Please provide an valid email address.",
-          customEmail: "Please enter a valid email address."
+          customEmail: "Please enter a valid email."
         },
-        'street_name': 'Please provide a valid street name.',
-        'pincode': 'Please provide a valid pincode.',
-        'city': 'Please provide a valid city.',
-        'state': 'Please provide a valid state.',
-        'country_code': 'Please provide a valid country code.',
-        'model_name': 'Please provide a valid model name.',
-        'manufacturing_date': 'Please provide a valid manufacturing date.',
-        'manufacturer': 'Please provide a valid manufacturer.',
-        'color': 'Please provide a valid color.',
+        'street_name': 'Please provide a street name.',
+        'pincode': 'Please provide a pincode.',
+        'city': 'Please provide a city.',
+        'state': 'Please provide a state.',
+        'country_code': 'Please provide a country code.',
+        'model_name': 'Please select a model name.',
+        'manufacturing_date': 'Please provide a manufacturing date.',
+        'manufacturer': 'Please select a manufacturer.',
+        'color': 'Please select a color.',
       }
     });
   });
