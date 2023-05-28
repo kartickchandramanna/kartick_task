@@ -19,6 +19,8 @@ from django.urls import path
 from registration import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('multi-step-form/', views.multistep_form, name='multi_step_form'),
+    path('', views.multistep_form, name='multi_step_form'),
+    path('success/', views.success_view, name='success'),
+
 
 ]
