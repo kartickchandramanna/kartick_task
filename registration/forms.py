@@ -3,21 +3,25 @@ from .models import Customer, Car, Address
 
 
 MODEL_CHOICES = (
+        ('', 'Select a model'),
         ('model1', 'Model 1'),
         ('model2', 'Model 2'),
         ('model3', 'Model 3'),
     )
+
 MANUFACTURER_CHOICES = (
+        ('', 'Select a manufacturer'),
         ('manufacturer1', 'Manufacturer 1'),
         ('manufacturer2', 'Manufacturer 2'),
         ('manufacturer3', 'Manufacturer 3'),
     )
+
 COLOR_CHOICES = (
+        ('', 'Select a color'),
         ('color1', 'Color 1'),
         ('color2', 'Color 2'),
         ('color3', 'Color 3'),
     )
-
 
 class AddressForm(forms.ModelForm):
     class Meta:
@@ -45,24 +49,11 @@ class CustomerForm(forms.ModelForm):
         }
 
 class CarForm(forms.ModelForm):
+    model_name = forms.ChoiceField(choices=MODEL_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+    manufacturing_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control'}))
+    manufacturer = forms.ChoiceField(choices=MANUFACTURER_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+    color = forms.ChoiceField(choices=COLOR_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+
     class Meta:
         model = Car
-        fields = ['model_name','manufacturing_date','manufacturer','color']
-        widgets = {
-            'model_name': forms.Select(choices=MODEL_CHOICES, attrs={'class':'form-control'}),
-            'manufacturing_date': forms.DateTimeInput(attrs={'type': 'datetime-local', 'class':'form-control'}),
-            'manufacturer': forms.Select(choices=MANUFACTURER_CHOICES, attrs={'class':'form-control'}),
-            'color': forms.Select(choices=COLOR_CHOICES, attrs={'class':'form-control'}),
-        }
-
-
-# class StudentRegistration(forms.ModelForm):
-    
-#     class Meta:
-#         model = User
-#         fields = ['name','email','password']
-#         widgets={
-#             'name':forms.TextInput(attrs={'class':'form-control','id':'my_fucking'}),
-#             'email':forms.EmailInput(attrs={'class':'form-control'}),
-#             'password':forms.PasswordInput(attrs={'class':'form-control'}),
-#         }
+        fields = ['model_name', 'manufacturing_date', 'manufacturer', 'color']
