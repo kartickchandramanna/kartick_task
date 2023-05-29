@@ -17,10 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from registration import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.multistep_form, name='multi_step_form'),
     path('success/', views.success_view, name='success'),
-
-
 ]
